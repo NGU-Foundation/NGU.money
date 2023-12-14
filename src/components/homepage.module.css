@@ -1,7 +1,18 @@
 .themodo { /* when number go up... */
-    background-color: rgb(43, 43, 107);
+    background-color: rgb(65, 65, 182);
     min-height: 600px;
     min-width: 100%;
     font-size: 200%;
-    font-family: 
+    font-family: monospace;
+    text-align: center;
+}
+
+.modotext {
+    padding-top: 15%;
+    color: white; /* white text only for this class, may change */
+}
+
+.modoayinlink {
+    color: white;
+    text-decoration: none;
 }
