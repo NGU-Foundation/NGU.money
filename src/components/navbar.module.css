@@ -1,0 +1,25 @@
+/* components/Navbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #70b951; /* Customize as needed */
+}
+
+.banner img {
+    width: 100%;
+    height: auto; /* Adjust based on your banner */
+}
+
+.navMenu {
+    list-style: none;
+    display: flex;
+}
+
+.navMenu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
