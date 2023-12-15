@@ -22,6 +22,7 @@ const Navbar = () => {
                 <li><Link href="/profile">My Profile</Link></li> {/* Updated href for profile */}
                 <li><Link href="/charts">Charts</Link></li> {/* Updated href for charts */}
                 <li><Link href="/trade-battle">Trade Battle</Link></li> {/* Updated href for trade battle */}
+                <li><Link href="/burn-ngu"> 🔥 </Link></li> {/* Updated href for trade battle */}
                 {/* Add more menu items here */}
             </ul>
         </nav>

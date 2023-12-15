@@ -1,0 +1,27 @@
+{
+  "fullNodeVersion": "v2.5.7",
+  "compilerOptionsUsed": {
+    "ignoreUnusedConstantsWarnings": false,
+    "ignoreUnusedVariablesWarnings": false,
+    "ignoreUnusedFieldsWarnings": false,
+    "ignoreUnusedPrivateFunctionsWarnings": false,
+    "ignoreUpdateFieldsCheckWarnings": false,
+    "ignoreCheckExternalCallerWarnings": false
+  },
+  "infos": {
+    "Burn": {
+      "sourceFile": "burnngu.ral",
+      "sourceCodeHash": "baed29bdbd58973f7ccd773dfd34f57d9899f3dd5b61f4794e7bbe37739ae42c",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "4075f51affab6580d00f709f37f718a1222fa2151f7d4faa736579bcd1f1a727",
+      "warnings": []
+    },
+    "Burnngu": {
+      "sourceFile": "scripts/burn.ral",
+      "sourceCodeHash": "248fc590a244e7cf1ff85f0876536b4fcc4bfe0ebd0b27fabb3d14499b8ff617",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    }
+  }
+}
