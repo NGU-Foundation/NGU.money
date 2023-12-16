@@ -1,10 +1,10 @@
 // Burn contract for NGU
 
 Contract Burn (
-    token: ByteVec,
-    mut burned: U256,
-    dev: Address,                                            
-    mut feescollected: U256
+    token: ByteVec,                                                 // NGU token id
+    mut burned: U256,                                               // amount of NGU burned
+    dev: Address,                                                   // address of developer
+    mut feescollected: U256                                         // fees collected
 ) {
     // Events
     event Burn(who: Address, howmuch: U256, when: U256)
