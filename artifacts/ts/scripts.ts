@@ -11,8 +11,16 @@ import {
   SignerProvider,
   HexString,
 } from "@alephium/web3";
+import { default as BuildtokenScriptJson } from "../create/Buildtoken.ral.json";
 import { default as BurnnguScriptJson } from "../scripts/Burnngu.ral.json";
 
+export const Buildtoken = new ExecutableScript<{
+  contract: HexString;
+  symbol: HexString;
+  name: HexString;
+  decimals: bigint;
+  tokenTotal: bigint;
+}>(Script.fromJson(BuildtokenScriptJson));
 export const Burnngu = new ExecutableScript<{
   contract: HexString;
   amount: bigint;

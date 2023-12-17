@@ -3,4 +3,6 @@
 /* eslint-disable */
 
 export * from "./Burn";
+export * from "./CreateToken";
+export * from "./Token";
 export * from "./scripts";
