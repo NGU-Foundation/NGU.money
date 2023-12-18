@@ -1,4 +1,6 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "appService.defaultWebAppToDeploy": "/subscriptions/83696a60-7408-432c-a77f-95854fc99811/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/ngu",
+  "appService.deploySubpath": "."
 }
