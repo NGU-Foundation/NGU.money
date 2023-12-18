@@ -24,7 +24,7 @@ export const BuildToken = async (
     })
 }
 
-// Burn NGU
+// Burn NGU Function
 export const BurnTokenContract = async (
     signerProvider: SignerProvider,
     amount: string,
