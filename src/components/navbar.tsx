@@ -4,6 +4,9 @@ import Image from 'next/image'; // Import the Image component
 import styles from './navbar.module.css';
 import NGUImage from '../assets/NGU.png'; // Assuming this is the correct path to your image
 
+// alephium imports
+import { AlephiumConnectButton, AlephiumWalletProvider } from '@alephium/web3-react';
+
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>

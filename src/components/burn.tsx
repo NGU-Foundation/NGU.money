@@ -6,18 +6,20 @@ import { FC, useState } from 'react';
 
 // Alephium Imports
 import { BurnTokenContract } from '../services/service'
-import { useAlephiumConnectContext } from '@alephium/web3-react'
-import { node } from '@alephium/web3'
 import { BurnNGU } from '@/services/utils'
+import { useWallet } from '@alephium/web3-react';
 
 // Sub Components
 
 export const TokenAutomationCreate: FC<{
     config: BurnNGU
 }> = ({ config }) => {
-    const context = useAlephiumConnectContext()
+    // Config
+    const { signer, account } = useWallet()
     const addressGroup = config.groupIndex
+    // Tx ID
     const [ongoingTxId, setOngoingTxId] = useState<string>()
+    // Symbols
     const [symbol, setSymbol] = useState<string>("")
     const [name, setName] = useState<string>("")
     const [decimals, setDecimals] = useState('')
@@ -29,18 +31,10 @@ export const TokenAutomationCreate: FC<{
     // Burning Token
     const handleBurnToken = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (context.signerProvider) {
-            const result = await BurnTokenContract(context.signerProvider, amount)
+        if (signer) {
+            const result = await BurnTokenContract(signer, amount)
         }
     }
-  
-    // Gets the TX and updates according to status on chain
-    const txStatusCallback = (status: node.TxStatus, numberOfChecks: number): Promise<any> => {
-        if ((status.type === 'Confirmed' && numberOfChecks > 2) || (status.type === 'TxNotFound' && numberOfChecks > 3)) {
-            setOngoingTxId(undefined)
-        }
-        return Promise.resolve()
-    } 
   
     console.log('ongoing..', ongoingTxId)
   
@@ -72,5 +66,9 @@ return (
       <br/>
     </>
   )
+}
+
+function useAlephiumConnectContext() {
+  throw new Error('Function not implemented.');
 }
   
