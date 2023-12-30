@@ -73,7 +73,7 @@ class Factory extends ContractFactory<
   BurnTokenTypes.Fields
 > {
   getInitialFieldsWithDefaultValues() {
-    return this.contract.getInitialFieldsWithDefaultValues();
+    return this.contract.getInitialFieldsWithDefaultValues() as BurnTokenTypes.Fields;
   }
 
   eventIndex = { Burn: 0, Destroy: 1 };
