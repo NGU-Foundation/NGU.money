@@ -5,39 +5,26 @@
 import { RunScriptResult, DeployContractExecutionResult } from "@alephium/cli";
 import { NetworkId } from "@alephium/web3";
 import {
-  Faucet,
-  FaucetInstance,
   Token,
   TokenInstance,
   CreateToken,
   CreateTokenInstance,
   BurnToken,
   BurnTokenInstance,
-  FeeCollection,
-  FeeCollectionInstance,
 } from ".";
-import { default as mainnetDeployments } from "../.deployments.mainnet.json";
 import { default as testnetDeployments } from "../.deployments.testnet.json";
 
 export type Deployments = {
   deployerAddress: string;
   contracts: {
-    Faucet: DeployContractExecutionResult<FaucetInstance>;
     Token: DeployContractExecutionResult<TokenInstance>;
     CreateToken: DeployContractExecutionResult<CreateTokenInstance>;
     BurnToken: DeployContractExecutionResult<BurnTokenInstance>;
-    FeeCollection?: DeployContractExecutionResult<FeeCollectionInstance>;
   };
 };
 
 function toDeployments(json: any): Deployments {
   const contracts = {
-    Faucet: {
-      ...json.contracts["Faucet"],
-      contractInstance: Faucet.at(
-        json.contracts["Faucet"].contractInstance.address
-      ),
-    },
     Token: {
       ...json.contracts["Token"],
       contractInstance: Token.at(
@@ -56,15 +43,6 @@ function toDeployments(json: any): Deployments {
         json.contracts["BurnToken"].contractInstance.address
       ),
     },
-    FeeCollection:
-      json.contracts["FeeCollection"] === undefined
-        ? undefined
-        : {
-            ...json.contracts["FeeCollection"],
-            contractInstance: FeeCollection.at(
-              json.contracts["FeeCollection"].contractInstance.address
-            ),
-          },
   };
   return {
     ...json,
@@ -76,12 +54,7 @@ export function loadDeployments(
   networkId: NetworkId,
   deployerAddress?: string
 ): Deployments {
-  const deployments =
-    networkId === "mainnet"
-      ? mainnetDeployments
-      : networkId === "testnet"
-      ? testnetDeployments
-      : undefined;
+  const deployments = networkId === "testnet" ? testnetDeployments : undefined;
   if (deployments === undefined) {
     throw Error("The contract has not been deployed to the " + networkId);
   }

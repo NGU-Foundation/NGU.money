@@ -1,8 +1,7 @@
-
 import { DUST_AMOUNT, ExecutableScript, ExecuteScriptResult, SignerProvider, contractIdFromAddress } from '@alephium/web3'
-import { Topup, Sendout, Destroy, Buildtoken, Gettoken, Editfee, Destroytoken, Burn } from '../../artifacts/ts/scripts'
+import { Buildtoken, Gettoken, Editfee, Destroytoken, Burn } from '../../artifacts/ts/scripts'
 import { TokenCreate, TokenTemplate, TokenBurnConfig } from './utils'
-import { BurnToken, Faucet } from 'artifacts/ts'
+import { BurnToken } from 'artifacts/ts'
 import * as web3 from '@alephium/web3'
 
 // Token Creation Functions for application testing mostly, could be implemented on site for a fee I suppose
@@ -39,6 +38,5 @@ export const BurnTokenContract = async (
     tokens: [{id: TokenBurnConfig.tokenId, amount: amount}]
   })
 }
-
 
 

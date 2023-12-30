@@ -256,8 +256,8 @@
 /* CSS */
 .buttonSite {
   appearance: button;
-  background-color: #1652F0;
-  border: 1px solid #1652F0;
+  background-color: #0dd332;
+  border: 1px solid #14bd39;
   border-radius: 4px;
   box-sizing: border-box;
   color: #FFFFFF;
@@ -286,13 +286,13 @@
 }
 
 .buttonSite:hover {
-  background-color: #0A46E4;
-  border-color: #0A46E4;
+  background-color: #0ae477;
+  border-color: #11b870;
 }
 
 .buttonSite:active {
-  background-color: #0039D7;
-  border-color: #0039D7;
+  background-color: #0ae477;
+  border-color: #11b870;
 }
 
 /* Button Dapp */

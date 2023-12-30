@@ -14,17 +14,11 @@ import {
 import { default as BuildtokenScriptJson } from "../scripts/Buildtoken.ral.json";
 import { default as BurnScriptJson } from "../scripts/Burn.ral.json";
 import { default as BuyvirlScriptJson } from "../scripts/Buyvirl.ral.json";
-import { default as DestroyScriptJson } from "../scripts/Destroy.ral.json";
-import { default as DestroyTokenSwapScriptJson } from "../scripts/DestroyTokenSwap.ral.json";
 import { default as DestroytokenScriptJson } from "../scripts/Destroytoken.ral.json";
 import { default as EditfeeScriptJson } from "../scripts/Editfee.ral.json";
-import { default as FeeAlphScriptJson } from "../scripts/FeeAlph.ral.json";
-import { default as FeePacaScriptJson } from "../scripts/FeePaca.ral.json";
 import { default as GettokenScriptJson } from "../scripts/Gettoken.ral.json";
 import { default as ReedeemalphScriptJson } from "../scripts/Reedeemalph.ral.json";
 import { default as SellvirlScriptJson } from "../scripts/Sellvirl.ral.json";
-import { default as SendoutScriptJson } from "../scripts/Sendout.ral.json";
-import { default as TopupScriptJson } from "../scripts/Topup.ral.json";
 import { default as WithdrawlassetsScriptJson } from "../scripts/Withdrawlassets.ral.json";
 
 export const Buildtoken = new ExecutableScript<{
@@ -42,12 +36,6 @@ export const Buyvirl = new ExecutableScript<{
   contract: HexString;
   amount: bigint;
 }>(Script.fromJson(BuyvirlScriptJson));
-export const Destroy = new ExecutableScript<{ contract: HexString }>(
-  Script.fromJson(DestroyScriptJson)
-);
-export const DestroyTokenSwap = new ExecutableScript<{ contract: HexString }>(
-  Script.fromJson(DestroyTokenSwapScriptJson)
-);
 export const Destroytoken = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(DestroytokenScriptJson)
 );
@@ -55,14 +43,6 @@ export const Editfee = new ExecutableScript<{
   contract: HexString;
   edit: bigint;
 }>(Script.fromJson(EditfeeScriptJson));
-export const FeeAlph = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(FeeAlphScriptJson));
-export const FeePaca = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(FeePacaScriptJson));
 export const Gettoken = new ExecutableScript<{
   contract: HexString;
   amount: bigint;
@@ -75,11 +55,6 @@ export const Sellvirl = new ExecutableScript<{
   contract: HexString;
   amount: bigint;
 }>(Script.fromJson(SellvirlScriptJson));
-export const Sendout = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(SendoutScriptJson));
-export const Topup = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(TopupScriptJson));
+export const Withdrawlassets = new ExecutableScript<{ contract: HexString }>(
+  Script.fromJson(WithdrawlassetsScriptJson)
+);

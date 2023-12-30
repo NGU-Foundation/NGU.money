@@ -13,7 +13,7 @@ export const Navbar = () => {
         <style>
             @import url(&quot;https://fonts.googleapis.com/css2?family=Tektur&display=swap&quot;);
         </style>
-      <div className={styles.logo}>ALPHpaca</div>
+      <div className={styles.logo}>NGU.Money</div>
       <ul className={styles.navItems}>
         <li>
           <Link href="/">
@@ -22,17 +22,17 @@ export const Navbar = () => {
         </li>
         <li>
           <Link href="/Token Creator">
-            Create Token
+            Profile
           </Link>
         </li>
         <li>
           <Link href="/Mint">
-            Mint
+            Whitepaper
           </Link>
         </li>
         <li>
           <Link href="/">
-            Coming Soon!
+            🔥
           </Link>
         </li>
         {/* Add more navigation items here */}

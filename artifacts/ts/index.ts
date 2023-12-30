@@ -4,8 +4,6 @@
 
 export * from "./BurnToken";
 export * from "./CreateToken";
-export * from "./Createswap";
-export * from "./Faucet";
 export * from "./FeeCollection";
 export * from "./Token";
 export * from "./Viral";

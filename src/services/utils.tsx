@@ -23,7 +23,14 @@ export interface BurnToken {
   groupIndex: number
   contractAddress: string
   contractId: string
-  tokenId: string
+  tokenId: string                   // token being burned
+}
+
+export interface Signal {
+  network: NetworkId
+  groupIndex: number
+  contractAddress: string
+  contractId: string
 }
 
 export function getNetwork(): NetworkId {
@@ -87,6 +94,7 @@ function getTokenTemplateConfig(): TokenTemplate {
   return {network, groupIndex, contractAddress, contractId}
 }
 
+//* Burn Token Config
 function getTokenBurnConfig(): BurnToken {
   const network = getNetwork()
   const groupIndex = 1

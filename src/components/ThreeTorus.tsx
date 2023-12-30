@@ -22,7 +22,7 @@ export const ThreeTorus = () => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x000033); // Dark blue background
+    scene.background = new THREE.Color(0x006400); // Dark green background
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -32,13 +32,13 @@ export const ThreeTorus = () => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true; // Enable shadow mapping
-    mountRef.current.appendChild(renderer.domElement);
+    mountRef.current.appendChild(renderer.domElement);                                
 
     // Torus Knot geometry
     const geometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
 
-    // Blue material
-    const material = new THREE.MeshStandardMaterial({ color: 0x0044ff });
+    // Gold Material material
+    const material = new THREE.MeshStandardMaterial({ color: 0xFFD700 });
 
     // Create torus knot mesh
     const torusKnot = new THREE.Mesh(geometry, material);

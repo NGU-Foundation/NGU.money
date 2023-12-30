@@ -14,6 +14,7 @@ import { NodeProvider } from '@alephium/web3';
 
 // Graphics
 import { ThreeTorus } from '@/components/ThreeTorus';
+import { Navbar } from '@/components/NavBar';
 
 export default function HomePage() {
 
@@ -27,6 +28,7 @@ export default function HomePage() {
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Tektur&display=swap&quot;);
         </style>
+        <Navbar></Navbar>
         <ThreeTorus></ThreeTorus>
         <br/>
         <div className={styles.NFTheader}>

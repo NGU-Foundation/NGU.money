@@ -10,7 +10,7 @@ import { NodeProvider, EventSubscribeOptions } from '@alephium/web3'
 import { CreateToken, CreateTokenInstance, CreateTokenTypes } from 'artifacts/ts'
 
 import Link from 'next/link'
-import tokenCreate from 'scripts/2_token_create'
+import tokenCreate from 'scripts/1_token_create'
 import WhitePaper from '../components/whitepaper'
 
 // Testnet: https://wallet-v20.testnet.alephium.org
