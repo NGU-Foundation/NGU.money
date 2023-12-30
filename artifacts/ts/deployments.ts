@@ -5,30 +5,37 @@
 import { RunScriptResult, DeployContractExecutionResult } from "@alephium/cli";
 import { NetworkId } from "@alephium/web3";
 import {
-  Burn,
-  BurnInstance,
+  Faucet,
+  FaucetInstance,
   Token,
   TokenInstance,
   CreateToken,
   CreateTokenInstance,
+  BurnToken,
+  BurnTokenInstance,
+  FeeCollection,
+  FeeCollectionInstance,
 } from ".";
+import { default as mainnetDeployments } from "../.deployments.mainnet.json";
 import { default as testnetDeployments } from "../.deployments.testnet.json";
 
 export type Deployments = {
   deployerAddress: string;
   contracts: {
-    Burn: DeployContractExecutionResult<BurnInstance>;
+    Faucet: DeployContractExecutionResult<FaucetInstance>;
     Token: DeployContractExecutionResult<TokenInstance>;
     CreateToken: DeployContractExecutionResult<CreateTokenInstance>;
+    BurnToken: DeployContractExecutionResult<BurnTokenInstance>;
+    FeeCollection?: DeployContractExecutionResult<FeeCollectionInstance>;
   };
 };
 
 function toDeployments(json: any): Deployments {
   const contracts = {
-    Burn: {
-      ...json.contracts["Burn"],
-      contractInstance: Burn.at(
-        json.contracts["Burn"].contractInstance.address
+    Faucet: {
+      ...json.contracts["Faucet"],
+      contractInstance: Faucet.at(
+        json.contracts["Faucet"].contractInstance.address
       ),
     },
     Token: {
@@ -43,6 +50,21 @@ function toDeployments(json: any): Deployments {
         json.contracts["CreateToken"].contractInstance.address
       ),
     },
+    BurnToken: {
+      ...json.contracts["BurnToken"],
+      contractInstance: BurnToken.at(
+        json.contracts["BurnToken"].contractInstance.address
+      ),
+    },
+    FeeCollection:
+      json.contracts["FeeCollection"] === undefined
+        ? undefined
+        : {
+            ...json.contracts["FeeCollection"],
+            contractInstance: FeeCollection.at(
+              json.contracts["FeeCollection"].contractInstance.address
+            ),
+          },
   };
   return {
     ...json,
@@ -54,7 +76,12 @@ export function loadDeployments(
   networkId: NetworkId,
   deployerAddress?: string
 ): Deployments {
-  const deployments = networkId === "testnet" ? testnetDeployments : undefined;
+  const deployments =
+    networkId === "mainnet"
+      ? mainnetDeployments
+      : networkId === "testnet"
+      ? testnetDeployments
+      : undefined;
   if (deployments === undefined) {
     throw Error("The contract has not been deployed to the " + networkId);
   }

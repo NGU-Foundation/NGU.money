@@ -8,7 +8,7 @@ dotenv.config()
 export type Settings = {
   issueTokenAmount: Number256
 }
-const defaultSettings: Settings = { issueTokenAmount: 0n }
+const defaultSettings: Settings = { issueTokenAmount: 100n }
 
 const configuration: Configuration<Settings> = {
   networks: {
@@ -20,13 +20,13 @@ const configuration: Configuration<Settings> = {
       settings: defaultSettings
     },
 
-    testnet: {  //! Will need a test key
+    testnet: {
       nodeUrl: (process.env.NODE_URL as string) ?? 'https://wallet-v20.testnet.alephium.org',
       privateKeys: process.env.key === undefined ? [] : process.env.key.split(','),
       settings: defaultSettings
     },
 
-    mainnet: {  //! Will need a prod key
+    mainnet: {
       nodeUrl: (process.env.NODE_URL as string) ?? 'https://wallet-v20.mainnet.alephium.org',
       privateKeys: process.env.prodkey === undefined ? [] : process.env.prodkey.split(','),
       settings: defaultSettings

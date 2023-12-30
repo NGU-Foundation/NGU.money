@@ -24,7 +24,7 @@ import {
   ContractInstance,
   getContractEventsCurrentCount,
 } from "@alephium/web3";
-import { default as CreateTokenContractJson } from "../create/CreateToken.ral.json";
+import { default as CreateTokenContractJson } from "../createtoken/CreateToken.ral.json";
 import { getContractByCodeHash } from "./contracts";
 
 // Custom types for the contract
@@ -72,7 +72,7 @@ class Factory extends ContractFactory<
   CreateTokenTypes.Fields
 > {
   getInitialFieldsWithDefaultValues() {
-    return this.contract.getInitialFieldsWithDefaultValues() as CreateTokenTypes.Fields;
+    return;
   }
 
   eventIndex = { Destroy: 0, CreateToken: 1 };
