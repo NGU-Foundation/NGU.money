@@ -29,6 +29,7 @@ env:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   build:
@@ -41,6 +42,9 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@owner' # Replace 'owner' with your GitHub user or org name
+        token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
 
     - name: npm install, build, and test
       run: |
