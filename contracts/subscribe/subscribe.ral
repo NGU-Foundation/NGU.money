@@ -1,0 +1,21 @@
+// Subscribe
+
+Contract Subscribe(
+    mut amount: U256,                   // Fee Amount (777 $NGU)
+    mut collected: U256,                // Collected Amount
+    mut collecteddev: U256,             // Dev Amount
+    developer: Address,                 // 1% Royalty
+    lead: Address                       // Lead
+) {
+    // Events
+    event subscribed(who: Address, when: U256)
+
+    // Error Codes
+    enum Codes {
+        InvalidCaller = 1
+    }
+
+    // Public Functions
+
+    // Contract Events
+}
