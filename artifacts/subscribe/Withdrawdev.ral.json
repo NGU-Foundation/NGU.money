@@ -1,27 +1,15 @@
 {
   "version": "v2.5.7",
-  "name": "Buildtoken",
-  "bytecodeTemplate": "0101030002001013c40de0b6b3a7640000170016001701b41601a2{1}{2}{3}{4}100d{0}010018",
+  "name": "Withdrawdev",
+  "bytecodeTemplate": "010103000200120c0d{0}010017000c0d{0}01021701b216001601a30c0c{0}0106",
   "fieldsSig": {
     "names": [
-      "contract",
-      "symbol",
-      "name",
-      "decimals",
-      "tokenTotal"
+      "contract"
     ],
     "types": [
-      "ByteVec",
-      "ByteVec",
-      "ByteVec",
-      "U256",
-      "U256"
+      "ByteVec"
     ],
     "isMutable": [
-      false,
-      false,
-      false,
-      false,
       false
     ]
   },

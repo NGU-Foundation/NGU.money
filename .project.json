@@ -1,5 +1,5 @@
 {
-  "fullNodeVersion": "v2.5.9",
+  "fullNodeVersion": "v2.5.7",
   "compilerOptionsUsed": {
     "ignoreUnusedConstantsWarnings": false,
     "ignoreUnusedVariablesWarnings": false,
@@ -42,6 +42,13 @@
       "sourceCodeHash": "1f75c67fc65f44672f0b66047fbbe2d7d4c999cc5ea4b175a0eced64133e1feb",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "7ed6793ccad176ce4c219e78b5957818968443e64427459cae59ead4c5e2dcb8",
+      "warnings": []
+    },
+    "Deposit": {
+      "sourceFile": "subscribe/tx_deposit.ral",
+      "sourceCodeHash": "51164d9f3c48706ddc6e91994d1c097f80234cc651dbc112e5150b78f16bb6a8",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
       "warnings": []
     },
     "Destroytoken": {
@@ -93,6 +100,13 @@
       "codeHashDebug": "",
       "warnings": []
     },
+    "Subscribe": {
+      "sourceFile": "subscribe/subscribe.ral",
+      "sourceCodeHash": "3a3e1f457365ab8ed9037238cac2c28525ee8164cc7182f4ba88e96d8659a105",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "9026a897a5f2bfb3bbc6266cd78eb839c977e50412880002a8f0736afcd034b9",
+      "warnings": []
+    },
     "Token": {
       "sourceFile": "createtoken/token.ral",
       "sourceCodeHash": "fcbdce030993275cfc162a2b970344a8e07a750122684f77ae7044756815f8db",
@@ -107,9 +121,23 @@
       "codeHashDebug": "d87d6c74c21a7bec6cba00e9a0388ca81c5a71518b8efb77f43b5160cfdd4456",
       "warnings": []
     },
+    "Withdrawdev": {
+      "sourceFile": "subscribe/tx_withdrawdev.ral",
+      "sourceCodeHash": "1830446db998fc94bba1598dbd07a00edb7c90a62adde4780d52fba3f16881fc",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
     "Withdrawlassets": {
       "sourceFile": "scripts/tokentesttwo.ral",
       "sourceCodeHash": "5f365d681775d5ef7a91db608b378978177c127b14a6835538487a7956f3d61f",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Withdrawplatform": {
+      "sourceFile": "subscribe/tx_withdrawplatform.ral",
+      "sourceCodeHash": "5a60550ff371a088abae490c85971ba83566ca9a4c65233f0ebc2845ee7db06d",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "",
       "warnings": []

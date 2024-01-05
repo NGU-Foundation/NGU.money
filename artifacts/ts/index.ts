@@ -5,6 +5,7 @@
 export * from "./BurnToken";
 export * from "./CreateToken";
 export * from "./FeeCollection";
+export * from "./Subscribe";
 export * from "./Token";
 export * from "./Viral";
 export * from "./scripts";

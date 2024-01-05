@@ -40,7 +40,7 @@
     "framer-motion": "^6.3.11",
     "i": "^0.3.7",
     "mysql2": "^3.6.3",
-    "next": "13.1.4",
+    "next": "^13.5.6",
     "phaser": "^3.70.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -53,7 +53,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "@alephium/cli": "v0.17.0",
+    "@alephium/cli": "^0.14.0",
     "@alephium/web3-test": "v0.17.0",
     "@types/jest": "^27.5.1",
     "@types/node": "18.11.18",
