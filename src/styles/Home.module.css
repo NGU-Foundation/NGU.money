@@ -1,3 +1,17 @@
+.indexPage {
+    background-color: #006400;
+}
+
+.nguMoney {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    opacity: 0.6;
+    z-index: 2;
+}
+
 .pagecolor {
     background-color: #080808;
 }
