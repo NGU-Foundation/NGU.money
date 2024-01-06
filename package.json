@@ -1,0 +1,39 @@
+{
+  "name": "ngumoney",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "devnet:build": "NEXT_PUBLIC_NETWORK=devnet next build",
+    "testnet:build": "NEXT_PUBLIC_NETWORK=testnet next build",
+    "mainnet:build": "NEXT_PUBLIC_NETWORK=mainnet next build",
+    "compile": "npx --yes @alephium/cli@latest compile",
+    "deploy": "npm run devnet:deploy",
+    "devnet:deploy": "npx --yes @alephium/cli@latest deploy -n devnet",
+    "testnet:deploy": "npx --yes @alephium/cli@latest deploy -n testnet",
+    "mainnet:deploy": "npx --yes @alephium/cli@latest deploy -n mainnet"
+  },
+  "dependencies": {
+    "@alephium/web3": "^0.27.5",
+    "@alephium/web3-react": "^0.27.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "dotenv": "^16.3.1",
+    "@tauri-apps/api": "^1.5.2"
+  },
+  "devDependencies": {
+    "@alephium/cli": "^0.14.0",
+    "@alephium/web3-test": "^0.27.5",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/node": "^20.10.6",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0",
+    "@tauri-apps/cli": "^1.5.8"
+  }
+}
