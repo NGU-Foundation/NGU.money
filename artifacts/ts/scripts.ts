@@ -11,61 +11,15 @@ import {
   SignerProvider,
   HexString,
 } from "@alephium/web3";
-import { default as BuildtokenScriptJson } from "../scripts/Buildtoken.ral.json";
-import { default as BurnScriptJson } from "../scripts/Burn.ral.json";
-import { default as BuyvirlScriptJson } from "../scripts/Buyvirl.ral.json";
 import { default as DepositScriptJson } from "../subscribe/Deposit.ral.json";
-import { default as DestroytokenScriptJson } from "../scripts/Destroytoken.ral.json";
-import { default as EditfeeScriptJson } from "../scripts/Editfee.ral.json";
-import { default as GettokenScriptJson } from "../scripts/Gettoken.ral.json";
-import { default as ReedeemalphScriptJson } from "../scripts/Reedeemalph.ral.json";
-import { default as SellvirlScriptJson } from "../scripts/Sellvirl.ral.json";
 import { default as WithdrawdevScriptJson } from "../subscribe/Withdrawdev.ral.json";
-import { default as WithdrawlassetsScriptJson } from "../scripts/Withdrawlassets.ral.json";
 import { default as WithdrawplatformScriptJson } from "../subscribe/Withdrawplatform.ral.json";
 
-export const Buildtoken = new ExecutableScript<{
-  contract: HexString;
-  symbol: HexString;
-  name: HexString;
-  decimals: bigint;
-  tokenTotal: bigint;
-}>(Script.fromJson(BuildtokenScriptJson));
-export const Burn = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(BurnScriptJson));
-export const Buyvirl = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(BuyvirlScriptJson));
 export const Deposit = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(DepositScriptJson)
 );
-export const Destroytoken = new ExecutableScript<{ contract: HexString }>(
-  Script.fromJson(DestroytokenScriptJson)
-);
-export const Editfee = new ExecutableScript<{
-  contract: HexString;
-  edit: bigint;
-}>(Script.fromJson(EditfeeScriptJson));
-export const Gettoken = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(GettokenScriptJson));
-export const Reedeemalph = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(ReedeemalphScriptJson));
-export const Sellvirl = new ExecutableScript<{
-  contract: HexString;
-  amount: bigint;
-}>(Script.fromJson(SellvirlScriptJson));
 export const Withdrawdev = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(WithdrawdevScriptJson)
-);
-export const Withdrawlassets = new ExecutableScript<{ contract: HexString }>(
-  Script.fromJson(WithdrawlassetsScriptJson)
 );
 export const Withdrawplatform = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(WithdrawplatformScriptJson)

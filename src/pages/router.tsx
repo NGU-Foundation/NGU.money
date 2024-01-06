@@ -3,10 +3,7 @@
 // Imports
 import { useRouter } from 'next/router'
 import Home from './index'
-import Token from './token_create'
-import Whitepaper from '../components/whitepaper'
-import Tools from './tools'
-import TokenAuto from './token_create'
+import Signals from './subscribepage'
 
 import React from 'react'
 
@@ -16,16 +13,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/whitepaper',
-    component: Whitepaper
-  },
-  {
-    path: '/tools',
-    component: Tools
-  },
-  {
-    path: '/token_create',
-    component: TokenAuto
+    path: '/subscribepage',
+    component: Signals
   }
 ]
 
