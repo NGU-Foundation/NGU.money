@@ -1,5 +1,5 @@
 import { NetworkId, ONE_ALPH } from "@alephium/web3"
-//import { loadDeployments } from "../../artifacts/ts/deployments" nothing deployed quite yet
+import { loadDeployments } from "../../artifacts/ts/deployments"
 
 //* Interfaces
 export interface SubscribeConfig {
@@ -18,11 +18,11 @@ export function getNetwork(): NetworkId {
 // Subscribe Config
 function getSubscribeConfig(): SubscribeConfig {
     const network = getNetwork()
-    const subscribe = "helloworld"
-    const groupIndex = 1 //subscribe //.groupIndex
-    const subscribeAddress = subscribe //.address
-    const subscribeID = subscribe //.contractId
-    const nguID = "23ced1fcda7fb1f53641dc299cf49b12a89338c80d05534fc5b366d5b65acd02"     // $PACA ID
+    const subscribe = loadDeployments(network).contracts.Subscribe.contractInstance
+    const groupIndex = subscribe.groupIndex
+    const subscribeAddress = subscribe.address
+    const subscribeID = subscribe.contractId
+    const nguID = "c4d0eca28076ad888751518000396745680af4d2949dc64170a1c596c136e501"     // token id
     return { network, groupIndex, subscribeAddress, subscribeID, nguID }
 }
 

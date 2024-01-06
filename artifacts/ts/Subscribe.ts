@@ -33,6 +33,7 @@ export namespace SubscribeTypes {
     subfee: bigint;
     platformfees: bigint;
     devfees: bigint;
+    fee: bigint;
     dev: Address;
     lead: Address;
     token: HexString;
@@ -41,12 +42,17 @@ export namespace SubscribeTypes {
   export type State = ContractState<Fields>;
 
   export type SubscribedEvent = ContractEvent<{
-    who: Address;
+    addy: Address;
+    who: HexString;
     when: bigint;
     devamt: bigint;
     platformfees: bigint;
   }>;
   export type WithdrawnguEvent = ContractEvent<{ when: bigint; amt: bigint }>;
+  export type FeeupdateEvent = ContractEvent<{
+    prevfee: bigint;
+    newfee: bigint;
+  }>;
 
   export interface CallMethodTable {
     getToken: {
@@ -88,7 +94,7 @@ class Factory extends ContractFactory<
     return this.contract.getInitialFieldsWithDefaultValues() as SubscribeTypes.Fields;
   }
 
-  eventIndex = { Subscribed: 0, Withdrawngu: 1 };
+  eventIndex = { Subscribed: 0, Withdrawngu: 1, Feeupdate: 2 };
   consts = { Codes: { InvalidCaller: BigInt(1) } };
 
   at(address: string): SubscribeInstance {
@@ -117,7 +123,10 @@ class Factory extends ContractFactory<
       return testMethod(this, "getPlatformFees", params);
     },
     deposit: async (
-      params: Omit<TestContractParams<SubscribeTypes.Fields, never>, "testArgs">
+      params: TestContractParams<
+        SubscribeTypes.Fields,
+        { discordname: HexString }
+      >
     ): Promise<TestContractResult<null>> => {
       return testMethod(this, "deposit", params);
     },
@@ -131,6 +140,16 @@ class Factory extends ContractFactory<
     ): Promise<TestContractResult<null>> => {
       return testMethod(this, "withdrawdev", params);
     },
+    updatefee: async (
+      params: TestContractParams<SubscribeTypes.Fields, { newfee: bigint }>
+    ): Promise<TestContractResult<null>> => {
+      return testMethod(this, "updatefee", params);
+    },
+    subdestroy: async (
+      params: Omit<TestContractParams<SubscribeTypes.Fields, never>, "testArgs">
+    ): Promise<TestContractResult<null>> => {
+      return testMethod(this, "subdestroy", params);
+    },
   };
 }
 
@@ -139,7 +158,7 @@ export const Subscribe = new Factory(
   Contract.fromJson(
     SubscribeContractJson,
     "",
-    "9026a897a5f2bfb3bbc6266cd78eb839c977e50412880002a8f0736afcd034b9"
+    "dccccac56eca0bc872d2233555413871e71897462c266917785672f2b7b08c9d"
   )
 );
 
@@ -183,9 +202,24 @@ export class SubscribeInstance extends ContractInstance {
     );
   }
 
+  subscribeFeeupdateEvent(
+    options: EventSubscribeOptions<SubscribeTypes.FeeupdateEvent>,
+    fromCount?: number
+  ): EventSubscription {
+    return subscribeContractEvent(
+      Subscribe.contract,
+      this,
+      options,
+      "Feeupdate",
+      fromCount
+    );
+  }
+
   subscribeAllEvents(
     options: EventSubscribeOptions<
-      SubscribeTypes.SubscribedEvent | SubscribeTypes.WithdrawnguEvent
+      | SubscribeTypes.SubscribedEvent
+      | SubscribeTypes.WithdrawnguEvent
+      | SubscribeTypes.FeeupdateEvent
     >,
     fromCount?: number
   ): EventSubscription {
