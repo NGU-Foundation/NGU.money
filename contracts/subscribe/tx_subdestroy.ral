@@ -1,5 +1,0 @@
-TxScript Subdestroy(
-	contract: Subscribe
-) {
-	contract.subdestroy()
-}
